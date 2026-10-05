@@ -1,0 +1,33 @@
+[project]
+name = "chemosound"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "hitran-api==1.3.0.0",
+    "numpy>=2.1",
+    "soundfile>=0.13.1",
+]
+
+[project.scripts]
+chemosound = "chemosound.cli:main"
+
+[project.optional-dependencies]
+gpu = [
+    "cupy-cuda13x[ctk]>=14.2,<15",
+]
+
+[dependency-groups]
+release = ["pyinstaller==6.22.3"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.hooks.custom]
+path = "build_hook.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/chemosound"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "tools", "research/**/*.py", "research/acquisition/*.json", "research/acquisition/schema.sql", "tests/are_comments.py", "build.py", "build_hook.py", "pyproject.toml", "uv.lock", "public_start.py", ".python-version"]

@@ -1,0 +1,100 @@
+{
+  "policy_id": "chemosound-evidence-intake-v1",
+  "status": "design-validation-only",
+  "automatic_primary_admission": false,
+  "authority_registry": [],
+  "automation": {
+    "required": true,
+    "production_worker_implemented": false,
+    "human_review_queue": false,
+    "interactive_prompts": false,
+    "manual_source_import_required": false,
+    "automatic_policy_relaxation": false,
+    "automatic_account_creation_or_purchase": false,
+    "request_poll_seconds": 5,
+    "source_refresh_seconds": 86400,
+    "source_priority": ["artist_label_manifest", "internet_archive"],
+    "daily_audio_transfer_budget_bytes": 25769803776,
+    "daily_metadata_transfer_budget_bytes": 268435456,
+    "maximum_metadata_requests_per_hour": 1000,
+    "maximum_staging_bytes": 68719476736,
+    "maximum_decoders": 1,
+    "maximum_fingerprint_workers": 1,
+    "completion_requires_exact_requested_counts": true,
+    "supply_exhaustion_result": "supply_unavailable",
+    "evidence_resolution": "machine_verifiable_claim_or_automatic_exclusion",
+    "frozen_corpus_extension": "new-version-with-preserved-memberships",
+    "windows_logon_type": "InteractiveToken",
+    "operating_envelope": "powered-awake-Windows-with-existing-user-session-and-network"
+  },
+  "sources": {
+    "artist_label_manifest": "authenticated-manifest-required",
+    "internet_archive": "discovery-and-hash-bound-transport-only",
+    "bandcamp": "historical-local-exports-only-not-an-unattended-refill-source",
+    "jamendo_api": "disabled-archive-permission-unestablished",
+    "medleydb": "excluded-modified-recordings",
+    "fma_dataset": "excluded-lossy-audio",
+    "mtg_jamendo_dataset": "excluded-lossy-audio"
+  },
+  "required_gates": [
+    "authenticated_release_master",
+    "lossless_release_history",
+    "rights_scope_bound_to_master",
+    "complete_recording_boundaries",
+    "source_bytes_match",
+    "decoded_pcm_match",
+    "ordered_channels_preserved",
+    "work_and_recording_lineage_resolved",
+    "duplicate_audit_complete",
+    "holdout_separation_complete",
+    "archive_second_copy_verified"
+  ],
+  "missing_evidence_action": "exclude_from_primary",
+  "conflicting_evidence_action": "quarantine",
+  "negative_fingerprint_is_independence_evidence": false,
+  "http": {
+    "user_agent": "Chemosound-source-design/1.0",
+    "minimum_request_interval_seconds": 1,
+    "max_concurrent_downloads_per_host": 1,
+    "timeout_seconds": 30,
+    "maximum_attempts": 5,
+    "backoff_seconds": [1, 2, 4, 8],
+    "maximum_redirects": 5,
+    "maximum_item_bytes": 21474836480,
+    "minimum_free_space_bytes": 10737418240,
+    "range_resume_requires_strong_etag": true,
+    "honor_retry_after": true,
+    "metadata_limit_bytes": 16777216,
+    "archive_discovery_max_items": 10000
+  },
+  "canonical_pcm": {
+    "version": "chemosound-canonical-pcm-v1",
+    "integer_container": "signed-int32-little-endian-left-justified",
+    "order": "frame-major-source-channel-order",
+    "block_frames": 262144,
+    "resample": false,
+    "normalize_gain": false,
+    "trim": false,
+    "channel_reorder": false,
+    "downmix": false
+  },
+  "reference_flac": {
+    "version": "1.5.0",
+    "package_url": "https://github.com/xiph/flac/releases/download/1.5.0/flac-1.5.0-win.zip",
+    "package_sha256": "53f1500f0d6e7c61379d7fee50d4a9f7f504c650009506d9ba015530d76c0dde",
+    "executable_relative_path": "flac-1.5.0-win/Win64/flac.exe"
+  },
+  "split": {
+    "namespace": "chemosound-lineage-split-v1",
+    "unit": "connected-work-and-master-family",
+    "primary_if_sha256_first_bit": 0,
+    "replication_if_sha256_first_bit": 1,
+    "maximum_recordings_per_corpus": 9999,
+    "pilot_families": "development-only"
+  },
+  "publication": {
+    "source_audio_redistribution": false,
+    "license_allowlist": ["CC-BY-4.0", "explicit-research-permission-v1"],
+    "other_licenses": "require-a-new-evidence-backed-policy-version"
+  }
+}

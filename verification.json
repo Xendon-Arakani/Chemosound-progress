@@ -1,0 +1,71 @@
+{
+  "version": "0.1.0-progress.1",
+  "release_stage": "progress",
+  "minimum_workflow_status": "pass",
+  "tests": [
+    {
+      "id": "packaged_runtime_identity",
+      "status": "pass"
+    },
+    {
+      "id": "isolated_state_initialization",
+      "status": "pass"
+    },
+    {
+      "id": "intake_discovery",
+      "status": "pass"
+    },
+    {
+      "id": "invalid_input_isolated",
+      "status": "pass"
+    },
+    {
+      "id": "independent_pcm_identity_oracle",
+      "status": "pass"
+    },
+    {
+      "id": "cross_container_duplicate_classification",
+      "status": "pass"
+    },
+    {
+      "id": "incomplete_corpus_rejected",
+      "status": "pass"
+    },
+    {
+      "id": "repaired_input_recovers",
+      "status": "pass"
+    },
+    {
+      "id": "committed_result_integrity",
+      "status": "pass"
+    },
+    {
+      "id": "nonempty_rights_bound_freeze",
+      "status": "pass"
+    },
+    {
+      "id": "frozen_mutation_rejected",
+      "status": "pass"
+    }
+  ],
+  "artifact_hashes_verified": true,
+  "public_allowlist_verified": true,
+  "independent_pcm_identity_verified": true,
+  "private_audio_accessed": false,
+  "scientific_inference_verified": false,
+  "clean_machine_verified": false,
+  "sha256": {
+    "executable": "d04c42dc449912ad2c0e29b2b68093f6c26f1ffdb9dbdf7353092fc1317233c2",
+    "package": "a7aab0a70d7cc6e823acaee2730aa26b36c37cf8c97ddac447a0c169063e2cd2",
+    "public_files": "dca5105c45e852ca323d9298741193d9e19544f98e9fe11baacb8f946c3d1a35",
+    "source_snapshot": "b45b9982857844bea520ba5c7ad063678d19c150075800344720e33af182e862"
+  },
+  "limitation_codes": [
+    "FLAC_UNAVAILABLE_PROGRESS",
+    "GPU_UNAVAILABLE_PROGRESS",
+    "SCIENTIFIC_WORKFLOWS_UNAVAILABLE_PROGRESS",
+    "UNIFORM_63_DERIVATION_UNQUALIFIED",
+    "AUTOMATED_PRIMARY_INTAKE_UNIMPLEMENTED",
+    "PRIMARY_CORPUS_UNCERTIFIED"
+  ]
+}

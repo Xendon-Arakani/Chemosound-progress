@@ -1,0 +1,202 @@
+[
+  {
+    "path": ".gitignore",
+    "bytes": 198,
+    "sha256": "e78e8b49e4953fa11a0189357fff0877c2d43c28190f810ef54f9c7082f2e12d"
+  },
+  {
+    "path": ".python-version",
+    "bytes": 7,
+    "sha256": "3a55324cbeddc91df012407d051dad08c88624c95a82fbdb856728729fbd14ab"
+  },
+  {
+    "path": "build.py",
+    "bytes": 368,
+    "sha256": "b3830a4f437f5951c20886e7b5f4c370b50058f656442af9d5e07837edd539cc"
+  },
+  {
+    "path": "build_hook.py",
+    "bytes": 272,
+    "sha256": "b9f2625af8f122f22a832d1f773ce68122ee5bd3026201019794cd55f5978ca1"
+  },
+  {
+    "path": "public_start.py",
+    "bytes": 122,
+    "sha256": "78709f4245bd15bb2365821d9512c533e67febbfc30677b8c793a6e0ac7111de"
+  },
+  {
+    "path": "pyproject.toml",
+    "bytes": 814,
+    "sha256": "051e2274a6e3ba8cc3ad833ab9aa8127768573cb08418a1487e98c54edeb64ef"
+  },
+  {
+    "path": "research/acquisition/audit_existing.py",
+    "bytes": 11099,
+    "sha256": "2f8369dd3ede904eeeee4cfd19181045c3b2e013d4ea65e854e9bdefb8b48e78"
+  },
+  {
+    "path": "research/acquisition/FEASIBILITY.json",
+    "bytes": 1059,
+    "sha256": "7df6956230a2e7907a25decdb7fac242a33397993a47123dc7ebfe2599effe6c"
+  },
+  {
+    "path": "research/acquisition/policy-v1.json",
+    "bytes": 3885,
+    "sha256": "0dff7c6eee22fd1eddfcfbd5c4a0f7f6841e0235ed2d8b40b721ee2af9404b55"
+  },
+  {
+    "path": "research/acquisition/publisher_schema.json",
+    "bytes": 5350,
+    "sha256": "f1753ddd010a6a36162fa55c9770975b2abc789ecd2f3c79093e1d370ca4338b"
+  },
+  {
+    "path": "research/acquisition/schema.sql",
+    "bytes": 9383,
+    "sha256": "26a20f0f98a292c8b49d28b16b9f18bc75a893a65e6c4a2ece1755a66a97bf90"
+  },
+  {
+    "path": "research/biological/audit_conversion.py",
+    "bytes": 9373,
+    "sha256": "e3819fd07f4299fcb4e93919dc3cd1e744aa6c94802fa76fa7fe446107297d86"
+  },
+  {
+    "path": "research/biological/audit_ir_source.py",
+    "bytes": 11414,
+    "sha256": "39fe3914d8c4c0c0f26dd96725f655a47bf32721d1cddc58be8903c8da217e21"
+  },
+  {
+    "path": "src/chemosound/__init__.py",
+    "bytes": 22,
+    "sha256": "20c8e430ededc2143396e553a3c67aac4ec483ef54efdfcb18a31cb162ca0646"
+  },
+  {
+    "path": "src/chemosound/__main__.py",
+    "bytes": 78,
+    "sha256": "28de248c91c00642578a541827361af9b0e5e049e4c61dd6ec1f9dc78580c24e"
+  },
+  {
+    "path": "src/chemosound/analysis_pipeline.py",
+    "bytes": 16502,
+    "sha256": "577d7808b029140eaa21e8387e36a587ddcddb8afc7f3e5aa9b4a71c4d43e746"
+  },
+  {
+    "path": "src/chemosound/audio.py",
+    "bytes": 3514,
+    "sha256": "ea0fd3bc49d27ed7f79db5e62eb7b7d3079e770cfedd005f6fc64a5afed16da3"
+  },
+  {
+    "path": "src/chemosound/authored_signal.py",
+    "bytes": 2397,
+    "sha256": "0883c2b480d8c02fab42062fcebd71d957f0139912171c3ca91456020603887f"
+  },
+  {
+    "path": "src/chemosound/bounded_relations.py",
+    "bytes": 5535,
+    "sha256": "48651c37fec598384b785a65c6303c901def5ec3055b7bcf87bd342353d4ecac"
+  },
+  {
+    "path": "src/chemosound/cli.py",
+    "bytes": 7913,
+    "sha256": "d375a33537af33d24ea9d7b66062068f6baadc2ce4a2ee85f3eac5d2054bda29"
+  },
+  {
+    "path": "src/chemosound/cpu_oracle.py",
+    "bytes": 15984,
+    "sha256": "c722e8e4cbf82f5f0df4c7c8e803b23380af1b481f7e75a66e4cffd6567ec8fa"
+  },
+  {
+    "path": "src/chemosound/db.py",
+    "bytes": 15266,
+    "sha256": "6ee3d91e1167e8e31a7551d695473f7a87805c0b71bf85ad6edce51a96ce8dee"
+  },
+  {
+    "path": "src/chemosound/field_store.py",
+    "bytes": 3579,
+    "sha256": "f138999557cf85804c72462db5dae8a604b2727ddb8bb47f0c122d7771f7086f"
+  },
+  {
+    "path": "src/chemosound/flow.py",
+    "bytes": 25178,
+    "sha256": "f2716fa2aa43efcb609736cddd9eae719991e84710589e39ab3fe95519e7eef6"
+  },
+  {
+    "path": "src/chemosound/gpu_relations.py",
+    "bytes": 14984,
+    "sha256": "763d885dd76c246fe0b3dc561f99e84547cacf27e740c84cb69370727058831d"
+  },
+  {
+    "path": "src/chemosound/hitran.py",
+    "bytes": 36344,
+    "sha256": "4ffb65de2b2cc81f494f6f34b1f0b180c8d32ae15943950704cadd09dae346f5"
+  },
+  {
+    "path": "src/chemosound/model.py",
+    "bytes": 1742,
+    "sha256": "750df84ee29e63d1f0fd4f716cd3c28bff7c3a4f0f23237a7558568fd5b6f885"
+  },
+  {
+    "path": "src/chemosound/pipeline.py",
+    "bytes": 21902,
+    "sha256": "0f06c681b9888451d28fbc84328de467e8c39dc17484a5ed269c7683d8673b50"
+  },
+  {
+    "path": "src/chemosound/public_main.py",
+    "bytes": 3366,
+    "sha256": "d156d71c129aca1c7017d69f99ad8fb6bd54a5b7dc94ae88f0f68a38c4f4fcaa"
+  },
+  {
+    "path": "src/chemosound/relations.py",
+    "bytes": 10621,
+    "sha256": "8e72be6cb65fa1d41cc02e14bf1f41e78435762de8736ac2519e0de8e5a5569c"
+  },
+  {
+    "path": "src/chemosound/rights.py",
+    "bytes": 2533,
+    "sha256": "5efb2e5483832379517f97fa8945f9d6ce3a8abd53d5b6679cc7a4e3187bdcb5"
+  },
+  {
+    "path": "src/chemosound/tensor_engine.py",
+    "bytes": 13534,
+    "sha256": "caf5d3f7b3b83f989698964ca69cfe686fa299cf13ad8f8745353f9e9f771436"
+  },
+  {
+    "path": "tests/are_comments.py",
+    "bytes": 7069,
+    "sha256": "5d3447b2459dddaecf7d9772a196fd1e3cc0229126b5bb8ee14669a61a2b7b48"
+  },
+  {
+    "path": "tools/build_audio_dll.py",
+    "bytes": 3119,
+    "sha256": "4319184a0dd82ee564a38bd9ef822929f67f463511b85c9dd89a4af88227fe2c"
+  },
+  {
+    "path": "tools/get_surface_audio.py",
+    "bytes": 33349,
+    "sha256": "adc53e13f87d5eb13598b9186679ea33c0a7090a8c75fbab34b4247c6f1b93e0"
+  },
+  {
+    "path": "tools/package_release.py",
+    "bytes": 9195,
+    "sha256": "700e6eaa8bcefb901d00f0c777d714a2b6656de79120d0d32f328f95395718fb"
+  },
+  {
+    "path": "tools/read_run_dist.py",
+    "bytes": 8713,
+    "sha256": "b12b7f442735724c6c02d78a578d6e06681fa14310bcb610ee9ea99c2935d978"
+  },
+  {
+    "path": "tools/run_rehearsal.py",
+    "bytes": 4234,
+    "sha256": "988f1207da1595696923523af747c132735493899e929ecf951472e7654911f9"
+  },
+  {
+    "path": "tools/save_audio_facts.py",
+    "bytes": 5218,
+    "sha256": "397fc44f9f7e86f4cb8dc93be46f93bb1cfc75fe80c7e6e3640e54cc2a3aed30"
+  },
+  {
+    "path": "uv.lock",
+    "bytes": 110672,
+    "sha256": "fe35b717d8426104d788adf5cc3346962ef852009af5f91038583473a5782343"
+  }
+]

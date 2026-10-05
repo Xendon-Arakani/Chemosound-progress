@@ -1,0 +1,21 @@
+{
+  "research_date_local": "2026-10-02",
+  "policy_id": "chemosound-evidence-intake-v1",
+  "all_user_requirements_established": false,
+  "operational_design_choices_specified": true,
+  "unattended_replenishment_required": true,
+  "unattended_production_worker_implemented": false,
+  "automated_compliant_supply_demonstrated": false,
+  "authenticated_compliant_provider_packages_found": 0,
+  "existing_source_files_measured": 3,
+  "existing_source_and_pcm_identity_checks_passed": 3,
+  "existing_strict_primary_eligible": 0,
+  "guaranteed_future_quota_fulfillment": false,
+  "unconditional_historical_provenance_proved": false,
+  "universal_audio_relationship_detection_proved": false,
+  "human_review_required_by_design": false,
+  "interactive_questions_required_by_design": false,
+  "missing_evidence_behavior": "automatic-exclusion-with-receipt",
+  "exhausted_supply_behavior": "supply_unavailable-with-exact-deficits-and-scheduled-refresh",
+  "production_enablement": "disabled-until-all-release-tests-and-source-prerequisites-pass"
+}

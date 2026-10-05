@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:chemosound:publisher-manifest:v1",
+  "title": "publisher_manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "issuer_id", "issuer_name", "official_domain", "issued_at_utc", "issuer_binding_evidence_sha256", "release_id", "release_url", "release_inventory_sha256", "tracks", "transport"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "issuer_id": {"$ref": "#/$defs/nonempty"},
+    "issuer_name": {"$ref": "#/$defs/nonempty"},
+    "official_domain": {"type": "string", "pattern": "^[A-Za-z0-9.-]+$"},
+    "issued_at_utc": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "issuer_binding_evidence_sha256": {"$ref": "#/$defs/evidenceArray"},
+    "release_id": {"$ref": "#/$defs/nonempty"},
+    "release_url": {"$ref": "#/$defs/https"},
+    "release_inventory_sha256": {"$ref": "#/$defs/sha256"},
+    "tracks": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/track"}},
+    "transport": {"$ref": "#/$defs/transport"}
+  },
+  "$defs": {
+    "nonempty": {"type": "string", "minLength": 1},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "https": {"type": "string", "format": "uri", "pattern": "^https://"},
+    "evidenceArray": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/sha256"}},
+    "ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/nonempty"}},
+    "reviewedIds": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ids", "inventory_review_evidence_sha256"],
+      "properties": {
+        "ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/nonempty"}},
+        "inventory_review_evidence_sha256": {"$ref": "#/$defs/evidenceArray"}
+      }
+    },
+    "track": {
+      "type": "object", "additionalProperties": false,
+      "required": ["publisher_track_id", "exact_file_name", "title", "artist", "object_sha256", "canonical_pcm_sha256", "object_bytes", "sample_rate", "channels", "frames", "bits_per_sample", "master_id", "master_family_ids", "work_ids", "creator_ids", "release_ids", "shared_recorded_material", "related_recordings", "full_recording", "rendition_role", "lossy_intermediate_after_final_master", "resampled_after_final_master", "reordered_or_remapped_after_final_master", "claim_evidence_sha256", "rights"],
+      "properties": {
+        "publisher_track_id": {"$ref": "#/$defs/nonempty"},
+        "exact_file_name": {"$ref": "#/$defs/nonempty"},
+        "title": {"$ref": "#/$defs/nonempty"},
+        "artist": {"$ref": "#/$defs/nonempty"},
+        "object_sha256": {"$ref": "#/$defs/sha256"},
+        "canonical_pcm_sha256": {"$ref": "#/$defs/sha256"},
+        "object_bytes": {"type": "integer", "minimum": 1, "maximum": 21474836480},
+        "sample_rate": {"type": "integer", "minimum": 1},
+        "channels": {"type": "integer", "minimum": 1},
+        "frames": {"type": "integer", "minimum": 1},
+        "bits_per_sample": {"enum": [8, 16, 24, 32]},
+        "master_id": {"$ref": "#/$defs/nonempty"},
+        "master_family_ids": {"$ref": "#/$defs/ids"},
+        "work_ids": {"$ref": "#/$defs/ids"},
+        "creator_ids": {"$ref": "#/$defs/ids"},
+        "release_ids": {"$ref": "#/$defs/ids"},
+        "shared_recorded_material": {"$ref": "#/$defs/reviewedIds"},
+        "related_recordings": {"$ref": "#/$defs/reviewedIds"},
+        "full_recording": {"const": true},
+        "rendition_role": {"const": "author-issued-final-release"},
+        "lossy_intermediate_after_final_master": {"const": false},
+        "resampled_after_final_master": {"const": false},
+        "reordered_or_remapped_after_final_master": {"const": false},
+        "claim_evidence_sha256": {"$ref": "#/$defs/evidenceArray"},
+        "rights": {"$ref": "#/$defs/rights"}
+      }
+    },
+    "rights": {
+      "type": "object", "additionalProperties": false,
+      "required": ["basis", "sound_recording_authority_evidence_sha256", "composition_authority_evidence_sha256", "third_party_material_clearance_evidence_sha256", "permission_scope", "license_document_sha256", "attribution_text"],
+      "properties": {
+        "basis": {"enum": ["CC-BY-4.0", "explicit-research-permission-v1"]},
+        "sound_recording_authority_evidence_sha256": {"$ref": "#/$defs/evidenceArray"},
+        "composition_authority_evidence_sha256": {"$ref": "#/$defs/evidenceArray"},
+        "third_party_material_clearance_evidence_sha256": {"$ref": "#/$defs/evidenceArray"},
+        "permission_scope": {"type": "array", "minItems": 4, "maxItems": 4, "uniqueItems": true, "items": {"enum": ["local_storage", "computational_analysis", "research_archiving", "publish_nonreconstructive_results"]}},
+        "license_document_sha256": {"$ref": "#/$defs/sha256"},
+        "attribution_text": {"$ref": "#/$defs/nonempty"}
+      }
+    },
+    "transport": {
+      "type": "object", "additionalProperties": false,
+      "required": ["urls", "permitted_hosts", "download_permission_evidence_sha256"],
+      "properties": {
+        "urls": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/https"}},
+        "permitted_hosts": {"$ref": "#/$defs/ids"},
+        "download_permission_evidence_sha256": {"$ref": "#/$defs/evidenceArray"}
+      }
+    }
+  }
+}
